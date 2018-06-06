@@ -29,18 +29,58 @@ a{
 
 #outro{
   display:none;
+  height: 100%;
+  width:100%;
 }
+
+
+
+  @keyframes spinner {
+    100% {
+      transform: rotate(3600deg);
+    }
+  }
+
+  .loading-container {
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    top: 50vh;
+    transform: translateY(-50%);
+  }
+
+  .spinner {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: url('http://i.imgur.com/oSHLAzp.png') center center;
+    background-size: contain;
+    transition-origin: 50% 50%;
+    animation: spinner 3s infinite alternate ease-in-out;
+  }
+  .spinner-center {
+    display: inline-block;
+    position: absolute;
+    margin-left: -100px;
+    width: 100px;
+    height: 100px;
+    background: url('http://i.imgur.com/u0BC2ZR.png') center center;
+    background-size: contain;
+    content: '';
+  }
+
+
+
 
 	@media screen and (max-width: 450px){
 
 
+
     #intro{
-    background: linear-gradient(to bottom, hotpink 0%, pink 100%);
+        background: white;
       height: 100%;
     }
-    #outro{
-      display: none;
-    }
+
 
 .pic {
     /* The image used */
@@ -123,6 +163,18 @@ text-align: center;
 -webkit-animation-iteration-count: 1;
 }
 
+.content .transparency {
+    position: absolute;
+    bottom: 0;
+    /* background: rgba(0, 0, 0, 0.6); /* Black background with transparency */ */
+    color: red;
+    width: 100%;
+    padding: 20px;
+    height: 10%;
+    text-align: center;
+    align-items: center;
+
+}
 div#link5.transparency2 {
     position: absolute;
     left:0;
@@ -148,10 +200,11 @@ div#link5.transparency2 {
   top:41%;
   left:25%;
   -webkit-animation-duration: .75s;
-  -webkit-animation-delay: 0.5s;
-  -webkit-animation-iteration-count: 1;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: 2;
    text-shadow: 2px 4px black;
 }
+
 
 
 }
@@ -165,7 +218,7 @@ div#link5.transparency2 {
 
 .pic {
     /* The image used */
-    background-image: url("theboys2.jpg");
+    background-image: url("laura1.jpg");
 
     /* Full height */
     height: 100%;
@@ -267,7 +320,7 @@ width: 20%;
 }
 
 #intro{
-background: linear-gradient(to bottom, #F08080 0%, #B22222 100%);
+    background: white;
   height: 100%;
 }
 
@@ -327,37 +380,46 @@ background: linear-gradient(to bottom, #F08080 0%, #B22222 100%);
 }
 
 
+
+
+
 </style>
 </head>
 <body>
 
 
-<div id="intro">
-	<h1 id="name" class= "intro animated zoomIn">w e l c o m e</h1>
-</div>
 
-<div id="outro" style="height:100%;">
+  <div id="intro">
+
+      <div class="loading-container">
+      <div class="spinner"></div>
+      <div class="spinner-center"></div>
+    </div>
+  </div>
+
+<div id="outro">
 <div class="pic">
 <div class="content">
 
 
-	<div id="link1"  class= "intro animated bounceInDown"><h1 style="color:#d49859;">LAURA MARTIN</h1>
-    <p style="margin-bottom: 0;">MODEL<p style="color: #CD5C5C; font-size: 30px;">INFLUENCER</p></div>
-    <a  id="link4" class="intro animated bounceInUp" onclick="openNav()"><h2>enter</h2></a>
-  <a href="#" id="link2" class="intro animated bounceInDown"><h2></h2></a>
-    <a href="#" id="link3" class="intro animated bounceInUp"><h2></h2></a>
+  	<div id="link1"  class= "intro animated bounceInDown"><h1 style="color:#d49859;">LAURA MARTIN</h1>
+      <p style="margin-bottom: 0;">MODEL<p style="color: #CD5C5C; font-size: 30px;">INFLUENCER</p></div>
+      <a  id="link4" class="intro animated bounceInUp" onclick="openNav()"><h2>ENTER</h2></a>
+    <a href="#" id="link2" class="intro animated bounceInDown"><h2></h2></a>
+      <a href="#" id="link3" class="intro animated bounceInUp"><h2></h2></a>
 
-          <a id="link6" class="intro animated slideInUp"  onclick="openNav()"><h2>ENTER</h2></a>
-        <div class="transparency2" id="link5" class= "intro animated bounceInDown">
-          <h1 style="color:white;line-height: .3; margin-top: 10%;  margin-bottom: 5px;">LAURA MARTIN</h1>
-          <p style="color:hotpink; margin-bottom: 0;">MODEL<p style="font-size: 12px; color:white;">INFLUENCER</p></div>
+            <a id="link6" class="intro animated slideInUp"  onclick="openNav()"><h2>enter</h2></a>
+          <div class="transparency2" id="link5" class= "intro animated bounceInDown">
+            <h1 style="color:white;line-height: .3; margin-top: 10%;  margin-bottom: 5px;">LAURA MARTIN</h1>
+            <p style="color:hotpink; margin-bottom: 0;">MODEL<p style="font-size: 12px; color:white;">INFLUENCER</p></div>
 
+</div>
 
 </div>
 
-</div>
-</div>
 
+
+</div>
 
 
 
@@ -367,11 +429,10 @@ background: linear-gradient(to bottom, #F08080 0%, #B22222 100%);
   <div class="overlay-content">
     <a href="aboutme.html">about</a>
     <a href="services.html">services</a>
-    <!-- <a href="#">clients</a> -->
+    <a href="#">clients</a> -->
     <a href="contact.html">contact</a>
   </div>
 </div>
-
 
 
 <script>
@@ -384,24 +445,24 @@ function closeNav() {
 }
 </script>
 
-	<script> //INTRO
-$(document).ready(function(){
-    $(function(){
 
-          $(".intro animated zoomIn").delay(1000).fadeOut("slow");
-        $("#intro").delay(1000).fadeOut("slow");
+  	<script> //INTRO
+  $(document).ready(function(){
+      $(function(){
 
-     });
- });
- </script>
- <script>
-$(document).ready(function(){
-    $(function(){
+          $("#intro").delay(1500).fadeOut("slow");
 
-        $("#outro").delay(2500).fadeIn("slow");
-    });
-});
-</script>
+       });
+   });
+   </script>
+   <script>
+  $(document).ready(function(){
+      $(function(){
+
+          $("#outro").delay(2000).fadeIn("slow");
+      });
+  });
+  </script>
 
 </body>
 </html>

@@ -2369,7 +2369,8 @@ body.clearfix.chooser {
         width: 50%;
     }
     .img-responsive {
-        width: 100%;
+        /* width: 100%; */
+        width: 3.5rem;
     }
     .aboutme-section .personal-details-right {
         margin-top: 40px;

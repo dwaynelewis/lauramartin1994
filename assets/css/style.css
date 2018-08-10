@@ -1096,7 +1096,9 @@ th {
 }
 
 .img-responsive {
-    width: 100%;
+    /* width: 100%; */
+    width: 3.5rem;
+    height: 3rem;
 }
 
 .portfolio_img_overlay {
